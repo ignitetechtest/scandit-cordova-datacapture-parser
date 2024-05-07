@@ -1,0 +1,35 @@
+{
+  "name": "scandit-cordova-datacapture-parser",
+  "version": "6.24.0-beta.2",
+  "description": "Scandit Data Capture SDK for Cordova",
+  "license": "Apache-2.0",
+  "private": false,
+  "main": "dist/index.js",
+  "types": "dist/dts/index.d.ts",
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-ios",
+    "cordova-android"
+  ],
+  "scripts": {
+    "build": "rollup -c rollup.config.js --bundleConfigAsCjs",
+    "test": "npm run lint",
+    "lint": "eslint ./www/ts",
+    "coverage": "jest --coverage --maxWorkers=12",
+    "clear-jest-cache": "jest --clearCache || true",
+    "clean": "npm run clear-jest-cache && node ../scandit-cordova-datacapture-core/scripts/clean.js",
+    "clean-all": "npm run clean && node ../scandit-cordova-datacapture-core/scripts/clean-all.js"
+  },
+  "dependencies": {
+    "scandit-cordova-datacapture-core": "6.24.0-beta.2",
+    "scandit-datacapture-frameworks-core": "6.24.0-beta.2"
+  },
+  "devDependencies": {},
+  "cordova": {
+    "id": "scandit-cordova-datacapture-parser",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  }
+}
